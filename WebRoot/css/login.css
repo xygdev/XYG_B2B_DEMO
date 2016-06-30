@@ -184,4 +184,18 @@
 	height:50px;
 	color:white
 }
+
+@media screen and (max-width:991px){
+	#login-page>.login-frame{
+		position:relative;
+		background-color:white;
+		margin:15vh auto;
+		width:100%;
+		max-width:992px;
+		border-radius:10px
+	}
+	#login-page{
+	    background-color:#fff
+	}
+}
 /**************登录页 end******************/

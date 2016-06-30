@@ -22,8 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
    
 
@@ -50,20 +49,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
   </head>
   
-  <body class="hold-transition skin-blue sidebar-mini">
-    
-    <div class="wrapper">
-    
+  <body class="hold-transition skin-blue sidebar-mini sidebar-collapse" >  
+    <div class="wrapper">    
        <header class="main-header">
-
         <!-- Logo -->
-        <a href="index2.html" class="logo dark-green">
+        <a href="index.jsp" class="logo dark-green">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>X</b>YG</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Xinyi</b>GLASS</span>
         </a>
-
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top green" role="navigation">
           <!-- Sidebar toggle button-->
@@ -110,11 +105,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                   </li>
                 </ul>
-              </li>
-              
+              </li>             
             </ul>
           </div>
-
         </nav>
       </header>
       
@@ -124,7 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>
+          <h1 id="test">
            	 信义玻璃B2B电子商务平台
             <small>Version 1.0</small>
           </h1>
@@ -134,17 +127,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" style="padding-left:0;padding-right:0;padding-bottom:0">
           <!-- Info boxes -->
-        <iframe frameborder="0" src="" id="mainframe" scrolling="no" style="width:100%" ></iframe>
-        <script type="text/javascript">
-    		//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
-    		$("#mainframe").load(function () {
-    		    alert($(this).contents().find("body").height());
-       	 		var mainheight = $(this).contents().find("body").height();
-        		$(this).height(mainheight);
-    		});
-		</script>
+        <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="no" style="width:100%" ></iframe>
+       
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       
@@ -173,5 +159,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
     <script src="js/auto_menu.js"></script>  
+    <script type="text/javascript">
+    	//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
+    	$("#mainframe").load(function () {
+    		//alert($(this).contents().find("body").height());clientHeight
+       	 	//var mainheight = $(this).contents().find("body").height();
+       	 	var mainwidth=$(this).contents().find("#container").width(); 
+       	 	var bodyID=$(this).contents().find("body").attr("id");
+       	 	if(bodyID=="homepage"){
+       	 	  if(mainwidth>=992){
+       	 	    var mainheight = 5490;
+       	 	  }
+       	 	  else{
+                var mainheight = 3850;
+       	 	  }     	 	
+       	 	}
+       	 	else{
+       	 	  var mainheight = $(this).contents().find("#container").height(); 
+       	 	}      	 	
+        	$(this).height(mainheight);
+    	});
+    	window.onresize=function(){    	    
+    		$('#mainframe').attr('src', $('#mainframe').attr('src'));
+    	}
+		</script>
   </body>
 </html>
