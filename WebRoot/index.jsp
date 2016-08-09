@@ -68,13 +68,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="img/login_page/user2-160x160.jpg" class="user-image" alt="User Image">
                   <span class="hidden-xs">Alexander Pierce</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header green">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="img/login_page/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
                       Alexander Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
@@ -126,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- Main content -->
         <section class="content" style="padding-left:0;padding-right:0;padding-bottom:0">
           <!-- Info boxes -->
-        <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="no" style="width:100%" ></iframe>
+        <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="yes" style="width:100%;height:650px;padding-bottom: 0px" ></iframe>
        
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
@@ -156,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	$("#mainframe").load(function () {
     		//alert($(this).contents().find("body").height());clientHeight
        	 	//var mainheight = $(this).contents().find("body").height();
-       	 	var mainwidth=$(this).contents().find("#container").width(); 
+       	 	/*var mainwidth=$(this).contents().find("#container").width(); 
        	 	var bodyID=$(this).contents().find("body").attr("id");
        	 	if(bodyID=="homepage"){
        	 	  if(mainwidth>=992){
@@ -169,7 +169,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        	 	else{
        	 	  var mainheight = $(this).contents().find("#container").height(); 
        	 	}      	 	
-        	$(this).height(mainheight);
+        	$(this).height(mainheight);*/
     	});
     	window.onresize=function(){    	    
     		$('#mainframe').attr('src', $('#mainframe').attr('src'));
