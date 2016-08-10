@@ -15,38 +15,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/auto_menu.js"></script>  
     <script>
         $(function(){
-        	var json="[{\"menu\":{\"name\":\"基础设置\",\"code\":\"BASIC_SET\",\"icon\":\"fa fa-cog\",\"menu\":[{\"name\":\"用户设置\",\"code\":\"USER_SET\",\"icon\":\"fa fa-user\",\"menu\":\"null\",\"func\":[{\"name\":\"用户信息\",\"href\":\"yellow.html\",\"icon\":\"fa fa-user-secret\"},{\"name\":\"用户管理\",\"href\":\"http://192.168.88.41:8080/interactReport/list.do?\",\"icon\":\"fa fa-users\"}]},{\"name\":\"菜单设置\",\"code\":\"MENU_SET\",\"icon\":\"fa fa-tasks\",\"menu\":\"null\",\"func\":[{\"name\":\"菜单信息\",\"href\":\"#\",\"icon\":\"fa fa-info-circle\"},{\"name\":\"菜单管理\",\"href\":\"#\",\"icon\":\"fa fa-server\"}]},{\"name\":\"职责设置\",\"code\":\"RESP_SET\",\"icon\":\"fa fa-user-plus\",\"menu\":\"null\",\"func\":[{\"name\":\"职责信息\",\"href\":\"red.html\",\"icon\":\"fa fa-github\"},{\"name\":\"职责管理\",\"href\":\"#\",\"icon\":\"fa fa-github\"}]}],\"func\":\"null\"}},{\"menu\":{\"name\":\"仓库库存\",\"code\":\"INV\",\"icon\":\"fa fa-truck\",\"menu\":[{\"name\":\"浮法库存\",\"code\":\"FF_INV\",\"icon\":\"fa fa-truck\",\"menu\":\"null\",\"func\":[{\"name\":\"库存查询\",\"href\":\"blue.html\",\"icon\":\"fa fa-github\"},{\"name\":\"库存管理\",\"href\":\"#\",\"icon\":\"fa fa-github\"}]},{\"name\":\"大板库存\",\"code\":\"JB_INV\",\"icon\":\"fa fa-truck\",\"menu\":\"null\",\"func\":[{\"name\":\"库存查询\",\"href\":\"#\",\"icon\":\"fa fa-github\"},{\"name\":\"库存管理\",\"href\":\"#\",\"icon\":\"fa fa-github\"}]}],\"func\":\"null\"}},{\"menu\":{\"name\":\"对账单\",\"code\":\"AP\",\"icon\":\"fa fa-jpy\",\"menu\":\"null\",\"func\":[{\"name\":\"浮法对账单\",\"href\":\"#\",\"icon\":\"fa fa-github\"},{\"name\":\"浮法对账单(非客户用)\",\"href\":\"#\",\"icon\":\"fa fa-github\"},{\"name\":\"大板对账单\",\"href\":\"#\",\"icon\":\"fa fa-github\"},{\"name\":\"大板对账单(非客户用)\",\"href\":\"#\",\"icon\":\"fa fa-github\"}]}},{\"menu\":{\"name\":\"预采购\",\"code\":\"PO\",\"icon\":\"fa fa-file-text-o\",\"menu\":\"null\",\"func\":[{\"name\":\"预采购订单\",\"href\":\"green.html\",\"icon\":\"fa fa-github\"},{\"name\":\"预采购订单（查询）\",\"href\":\"#\",\"icon\":\"fa fa-github\"}]}},{\"menu\":{\"name\":\"一级菜单\",\"code\":\"MENU1\",\"icon\":\"fa fa-file-text-o\",\"menu\":[{\"name\":\"二级菜单\",\"code\":\"MENU2\",\"icon\":\"fa fa-file-text-o\",\"menu\":[{\"name\":\"三级菜单\",\"code\":\"MENU3\",\"icon\":\"fa fa-file-text-o\",\"menu\":[{\"name\":\"四级菜单\",\"code\":\"MENU4\",\"icon\":\"fa fa-file-text-o\",\"menu\":[],\"func\":[{\"name\":\" 四级功能\",\"href\":\"green.html\",\"icon\":\"fa fa-github\"}]}],\"func\":[{\"name\":\" 三级功能\",\"href\":\"green.html\",\"icon\":\"fa fa-github\"}]}],\"func\":[{\"name\":\" 二级功能\",\"href\":\"green.html\",\"icon\":\"fa fa-github\"}]}],\"func\":[{\"name\":\"一级功能\",\"href\":\"green.html\",\"icon\":\"fa fa-github\"}]}}]";
-      		var menujson = eval('('+json+')');
-      	    $().menu(menujson);   
+      		var text="[{\"prev\":\"\",\"name\":\"基础设置\",\"code\":\"BASIC_SET\",\"icon\":\"fa fa-cog\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"BASIC_SET\",\"name\":\"用户设置\",\"code\":\"USER_SET\",\"icon\":\"fa fa-user\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"USER_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-users\",\"func\":\"用户管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"BASIC_SET\",\"name\":\"职责设置\",\"code\":\"RESP_SET\",\"icon\":\"fa fa-user-plus\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"RESP_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-meh-o\",\"func\":\"职责管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"BASIC_SET\",\"name\":\"菜单设置\",\"code\":\"MENU_SET\",\"icon\":\"fa fa-tasks\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"MENU_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-info-circle\",\"func\":\"菜单管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"MENU_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-server\",\"func\":\"子菜单管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"BASIC_SET\",\"name\":\"功能设置\",\"code\":\"FUNC_SET\",\"icon\":\"fa fa-plug\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"FUNC_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-book\",\"func\":\"功能管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"BASIC_SET\",\"name\":\"权限设置\",\"code\":\"PERMISSION_SET\",\"icon\":\"fa fa-lock\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"PERMISSION_SET\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-unlock-alt\",\"func\":\"权限管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"\",\"name\":\"仓库库存\",\"code\":\"INV\",\"icon\":\"fa fa-truck\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"INV\",\"name\":\"浮法库存\",\"code\":\"FF_INV\",\"icon\":\"fa fa-cubes\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"INV\",\"name\":\"大板库存\",\"code\":\"JB_INV\",\"icon\":\"fa fa-cubes\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"FF_INV\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-cube\",\"func\":\"库存查询\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"JB_INV\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-cube\",\"func\":\"库存查询\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"\",\"name\":\"对账单\",\"code\":\"AP\",\"icon\":\"fa fa-bar-chart\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"AP\",\"name\":\"浮法对账单\",\"code\":\"FF_AP\",\"icon\":\"fa fa-money\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"AP\",\"name\":\"大板对账单\",\"code\":\"JB_AP\",\"icon\":\"fa fa-money\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"FF_AP\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-jpy\",\"func\":\"对账单查询\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"JB_AP\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-jpy\",\"func\":\"对账单查询\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"\",\"name\":\"预采购订单\",\"code\":\"PO\",\"icon\":\"fa fa-shopping-cart\",\"func\":\"\",\"href\":\"\"},{\"prev\":\"PO\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-shopping-bag\",\"func\":\"订单管理\",\"href\":\"http://www.baidu.com\"},{\"prev\":\"PO\",\"name\":\"\",\"code\":\"\",\"icon\":\"fa fa-search\",\"func\":\"订单查询\",\"href\":\"http://www.baidu.com\"}]";
+      		var json = eval('('+text+')');
+      	    $().menu(json);   
       	    
+      	    //动态生成面包屑
       	    $('a[data-href]').on('click', function(e) {
-				e.preventDefault();//阻止<a>标签默认的点击事件（超链接跳转）
-				value=$(this).data().href;				
-				level=$(this).data().level;
-				$('section.content-header h1').text($(this).text());
+      	    	e.preventDefault();//阻止<a>标签默认的点击事件（超链接跳转）
+      	    	value=$(this).data().href;	
+      	    	$("#mainframe").attr("src",value);
+      	    	$('section.content-header h1').text($(this).text());
 				$('ol.breadcrumb li').remove();
-				$('ol.breadcrumb').append('<li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> 主页</a></li>');
-				if(level==1){
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').children('a').children('span').html()+'</li>');
-				}
-				else if(level==2){
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').children('a').children('span').html()+'</li>');
+				$('ol.breadcrumb').append('<li><a href=\"index.jsp\"><i class=\"fa fa-dashboard\"></i> 主页</a></li>');
+				var json=$(this).parentsUntil('ul.sidebar-menu').children('a').children('span');
+				for(i=0;i<json.length;i++){
+				    $('ol.breadcrumb').append('<li>'+json[i].innerText+'</li>');
+				    //alert(json[i].innerText);
 				}	
-				else if(level==3){
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').children('a').children('span').html()+'</li>');
-				}	
-				else if(level==4){
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').parents('.treeview').children('a').children('span').html()+'</li>');
-				    $('ol.breadcrumb').append('<li>'+$(this).parents('.treeview').children('a').children('span').html()+'</li>');
-				}	
-				console.log($(this).parents('.treeview').children('a').children('span').html());
-				$("#mainframe").attr("src",value);
-			});      		
+      	    });
       	});
     </script>
 

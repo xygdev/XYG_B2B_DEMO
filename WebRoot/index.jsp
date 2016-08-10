@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -129,17 +129,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="yes" style="width:100%;height:650px;padding-bottom: 0px" ></iframe>
        
         </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-      
-    
-    
+      </div><!-- /.content-wrapper -->     
     </div>
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
     <!-- Sparkline -->
@@ -148,8 +143,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- AdminLTE dashboard -->
     <script src="dist/js/pages/dashboard2.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
     <script src="js/auto_menu.js"></script>  
     <script type="text/javascript">
     	//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
