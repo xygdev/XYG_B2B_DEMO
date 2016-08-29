@@ -19,10 +19,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="bootstrap/css/AdminLTE.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-   
+    <link rel="stylesheet" href="bootstrap/css/skins/_all-skins.min.css"> 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,7 +63,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </a>
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">            
+            <ul class="nav navbar-nav"> 
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success">4</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 4 messages</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <!-- start message -->
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="img/login_page/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i>16/08/29 10:51</small>
+                          </h4>
+                          <p>From:<span>Bird</span></p>
+                        </a>
+                      </li>
+                      <!-- end message -->    
+                    </ul>            
+                  <li class="footer"><a href="#">See All Messages</a></li>
+                </ul>
+              </li>           
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -108,7 +136,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </nav>
       </header>
       
-
       <jsp:include page="Left-SideBar.jsp"/>
       
       <div class="content-wrapper">
@@ -124,49 +151,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </section>
 
         <!-- Main content -->
-        <section class="content" style="padding-left:0;padding-right:0;padding-bottom:0">
+        <section class="content" style="padding:0">
           <!-- Info boxes -->
-        <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="yes" style="width:100%;height:650px;padding-bottom: 0px" ></iframe>
-       
+          <iframe frameborder="0" src="Home.jsp" id="mainframe" scrolling="yes" framespacing="0"  style="width:100%;padding:0" ></iframe>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->     
     </div>
     <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="plugin/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script
-    <!-- SlimScroll 1.3.0 -->
-    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- AdminLTE dashboard -->
-    <script src="dist/js/pages/dashboard2.js"></script>
-    <script src="js/auto_menu.js"></script>  
+    <script src="bootstrap/js/app.min.js"></script>
+    <script src="plugin/js/auto_menu.js"></script>  
     <script type="text/javascript">
-    	//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
-    	$("#mainframe").load(function () {
-    		//alert($(this).contents().find("body").height());clientHeight
-       	 	//var mainheight = $(this).contents().find("body").height();
-       	 	/*var mainwidth=$(this).contents().find("#container").width(); 
-       	 	var bodyID=$(this).contents().find("body").attr("id");
-       	 	if(bodyID=="homepage"){
-       	 	  if(mainwidth>=992){
-       	 	    var mainheight = 5490;
-       	 	  }
-       	 	  else{
-                var mainheight = 3850;
-       	 	  }     	 	
-       	 	}
-       	 	else{
-       	 	  var mainheight = $(this).contents().find("#container").height(); 
-       	 	}      	 	
-        	$(this).height(mainheight);*/
-    	});
-    	window.onresize=function(){    	    
-    		$('#mainframe').attr('src', $('#mainframe').attr('src'));
-    	}
-		</script>
+    	width=$(window).width();
+        height=$(window).height();
+        if(width>=768){
+            headerheight=$('section.content-header').innerHeight();
+            ifmheight=height-headerheight-55;
+            $('#mainframe').css('height',ifmheight+'px');
+        }else{
+            logoheight=$('a.logo').height();
+            headerheight=$('section.content-header').innerHeight();
+            ifmheight=height-logoheight-headerheight-55;
+            $('#mainframe').css('height',ifmheight+'px');
+        }
+    	
+    	var isResizing = false;
+    	window.onresize=function(){ 
+    		if (!isResizing) { 
+    			console.log('do resizing now!'); 
+    			width=$(window).width();
+            	height=$(window).height();
+            	if(width>=768){
+            		headerheight=$('section.content-header').innerHeight();
+            		ifmheight=height-headerheight-55;
+
+            		$('#mainframe').css('height',ifmheight+'px');
+            	}else{
+            		console.log('debug2');
+                	logoheight=$('a.logo').height();
+            		headerheight=$('section.content-header').innerHeight();
+            		ifmheight=height-logoheight-headerheight-55;
+            		$('#mainframe').css('height',ifmheight+'px');
+           		}
+    			setTimeout(function () { 
+    				isResizing = false; 
+    			}, 1000); 
+    		} 
+    		isResizing = true; 
+    	}; 
+	</script>
   </body>
 </html>

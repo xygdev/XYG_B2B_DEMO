@@ -16,10 +16,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet" >
-    <link href="css/home.css" rel="stylesheet">
-    <link href="css/queries.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="plugin/css/flexslider.css" rel="stylesheet" >
+    <link href="plugin/css/home.css" rel="stylesheet">
+    <link href="plugin/css/queries.css" rel="stylesheet">
+    <link href="plugin/css/animate.css" rel="stylesheet">
     	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -357,14 +357,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
       </footer>
       <!-- jQuery 2.1.4 -->
-   	  <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+   	  <script src="plugin/jQuery/jQuery-2.1.4.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/waypoints.min.js"></script>
+      <script src="plugin/js/waypoints.min.js"></script>
       <!-- Bootstrap 3.3.5 -->
    	  <script src="bootstrap/js/bootstrap.min.js"></script>
-      <script src="js/scripts.js"></script>
-      <script src="js/jquery.flexslider.js"></script>
-      <script src="js/modernizr.js"></script>
+      <script src="plugin/js/scripts.js"></script>
+      <script src="plugin/js/jquery.flexslider.js"></script>
+      <script src="plugin/js/modernizr.js"></script>
       <script>
         /****绑定a标签****/
 		$('a[data-up]').on('click', function(e) {
